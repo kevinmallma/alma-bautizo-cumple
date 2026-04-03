@@ -13,12 +13,27 @@ function rnd(a, b) {
   return a + (b - a) * Math.random();
 }
 
+let lastWidth = 0;
+
 function resize() {
+  if (
+    window.innerWidth === lastWidth &&
+    Math.abs(window.innerHeight - H) < 100
+  ) {
+    // Si el cambio es menor a 100px (típico de la barra de navegación), no hacemos nada
+    return;
+  }
+
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
   W = canvas.width;
   H = canvas.height;
-  initScene();
+
+  // Solo regeneramos los peces y plantas si el ancho cambió (ej. rotación de pantalla)
+  if (W !== lastWidth) {
+    initScene();
+    lastWidth = W;
+  }
 }
 
 const PALETTES = [
