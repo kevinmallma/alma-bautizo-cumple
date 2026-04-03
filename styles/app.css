@@ -76,7 +76,7 @@ canvas {
 
 .header-image h1 {
     color: #f5cd58;
-    font-family: "Pacifico", cursive;
+    font-family: "Pacifico", cursive !important;
     font-size: 1.94rem;
 }
 
