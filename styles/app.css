@@ -1,0 +1,161 @@
+/* --- 1. Variables y Configuración Base --- */
+:root {
+    --marino: #00838f;
+    --dorado: #b8860b;
+    --color-nombre: #b964ff;
+    --blanco-transparente: rgba(255, 255, 255, 0.75);
+    --glass-blur: blur(20px);
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: "Quicksand", sans-serif;
+    overflow-x: hidden;
+}
+
+/* --- 2. Elementos de Fondo (Canvas y Burbujas) --- */
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    display: block;
+}
+
+.bubble {
+    position: fixed;
+    bottom: -50px;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    z-index: 0;
+    animation: moveUp 7s infinite ease-in;
+}
+
+@keyframes moveUp {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-110vh);
+        opacity: 0;
+    }
+}
+
+/* --- 3. Contenedores Principales --- */
+.main-container {
+    max-width: 550px;
+    margin: auto;
+    padding: 40px 15px;
+}
+
+@media (max-width: 600px) {
+    .main-container {
+        max-width: 353px;
+    }
+}
+
+.invitation-card {
+    border-radius: 40px;
+    overflow: hidden;
+    text-align: center;
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    color: #fff;
+}
+
+/* --- 4. Cabecera y Nombre --- */
+.header-image {
+    padding: 35px 35px 4px 35px;
+}
+
+.header-image h1 {
+    color: #f5cd58;
+    font-family: "Pacifico", cursive;
+    font-size: 2rem;
+}
+
+.header-image .nombre-bebe {
+    background-color: var(--color-nombre);
+    color: #ffffff;
+    display: inline-block;
+    font-family: cursive;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px 30px;
+    position: relative;
+    z-index: 1;
+    margin-top: 1rem;
+}
+
+/* Cintillo del nombre usando Clip-path */
+.header-image .nombre-bebe::before,
+.header-image .nombre-bebe::after {
+    content: "";
+    background-color: var(--color-nombre);
+    height: 100%;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    left: -10px;
+    right: -10px;
+}
+
+.header-image .nombre-bebe::before {
+    clip-path: polygon(5% 0, 95% 0, 100% 100%, 0% 100%);
+}
+
+.header-image .nombre-bebe::after {
+    clip-path: polygon(0 0, 100% 0, 95% 100%, 5% 100%);
+}
+
+/* --- 5. Bloques de Información (Cajas de Vidrio) --- */
+.event-details {
+    padding: 25px 25px 4px 25px;
+}
+
+.detail-box {
+    border-radius: 20px;
+    padding: 15px;
+    border: 1px dashed var(--blanco-transparente);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+}
+
+.family-section {
+    border: 1px dashed #b2ebf2;
+    border-radius: 20px;
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+}
+
+.divider {
+    border-top: 1px solid #b2ebf2;
+    width: 50%;
+    margin: 5px auto 15px auto;
+}
+
+/* --- 6. Tipografía de Detalles --- */
+.family-title {
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+}
+
+.name-label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    display: block;
+}
+
+.name-value {
+    font-size: 1rem;
+}
