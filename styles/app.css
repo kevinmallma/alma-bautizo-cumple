@@ -1,103 +1,68 @@
 /* --- 1. Variables y Configuración Base --- */
 :root {
-    --marino: #00838f;
-    --dorado: #b8860b;
-    --color-nombre: #b964ff;
-    --blanco-transparente: rgba(255, 255, 255, 0.75);
-    --glass-blur: blur(20px);
+    --color-dorado: #f5cd58;
+    --color-lila: #b964ff;
 }
 
 body, html {
-    margin: 0;
-    padding: 0;
     height: 100%;
-    font-family: "Quicksand", sans-serif;
+    margin: 0;
     overflow-x: hidden;
+    padding-top: 1rem;
+    width: 100%;
 }
 
 /* --- 2. Elementos de Fondo (Canvas y Burbujas) --- */
 canvas {
+    display: block;
+    height: 100vh;
+    left: 0;
     position: fixed;
     top: 0;
-    left: 0;
     width: 100vw;
-    height: 100vh;
-    z-index: -1;
-    display: block;
+    z-index: 1;
 }
 
-.bubble {
-    position: fixed;
-    bottom: -50px;
-    background: rgba(255, 255, 255, 0.4);
-    border-radius: 50%;
-    z-index: 0;
-    animation: moveUp 7s infinite ease-in;
-}
-
-@keyframes moveUp {
-    0% {
-        transform: translateY(0);
-        opacity: 1;
-    }
-
-    100% {
-        transform: translateY(-110vh);
-        opacity: 0;
-    }
-}
-
-/* --- 3. Contenedores Principales --- */
-.main-container {
+/* --- 3. Contenedor Principal --- */
+.container {
     max-width: 550px;
-    margin: auto;
-    padding: 40px 15px;
-}
-
-@media (max-width: 600px) {
-    .main-container {
-        max-width: 353px;
-    }
-}
-
-.invitation-card {
-    border-radius: 40px;
-    overflow: hidden;
     text-align: center;
-    backdrop-filter: var(--glass-blur);
-    -webkit-backdrop-filter: var(--glass-blur);
-    color: #fff;
+    z-index: 2;
 }
 
-/* --- 4. Cabecera y Nombre --- */
+/* --- 4. Estilos del Header --- */
 .header-image {
-    padding: 35px 35px 4px 35px;
+    margin-bottom: 1rem;
 }
 
 .header-image h1 {
+<<<<<<< HEAD
     color: #f5cd58;
     font-family: "Pacifico", cursive !important;
     font-size: 1.94rem;
+=======
+    color: var(--color-dorado);
+    font-family: "Pacifico", cursive !important;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+>>>>>>> modificacion
 }
 
-.header-image .nombre-bebe {
-    background-color: var(--color-nombre);
+.header-image h2 {
+    background-color: var(--color-lila);
     color: #ffffff;
     display: inline-block;
     font-family: cursive;
-    font-size: 20px;
+    font-size: 1.25rem;
     font-weight: bold;
     padding: 10px 30px;
     position: relative;
-    z-index: 1;
-    margin-top: 1rem;
 }
 
-/* Cintillo del nombre usando Clip-path */
-.header-image .nombre-bebe::before,
-.header-image .nombre-bebe::after {
+.header-image h2::before,
+.header-image h2::after {
     content: "";
-    background-color: var(--color-nombre);
+    background-color: var(--color-lila);
     height: 100%;
     position: absolute;
     top: 0;
@@ -106,81 +71,37 @@ canvas {
     right: -10px;
 }
 
-.header-image .nombre-bebe::before {
+.header-image h2::before {
     clip-path: polygon(5% 0, 95% 0, 100% 100%, 0% 100%);
 }
 
-.header-image .nombre-bebe::after {
+.header-image h2::after {
     clip-path: polygon(0 0, 100% 0, 95% 100%, 5% 100%);
 }
 
-/* --- 5. Bloques de Información (Cajas de Vidrio) --- */
-.event-details {
-    padding: 25px 25px 4px 25px;
+/* --- 5. Estilos del Artículo de Información --- */
+
+.article-info {
+    text-align: center;
+    padding: 0 2rem;
+    margin-bottom: 1rem;
 }
 
-.detail-box {
-    border-radius: 20px;
-    padding: 15px;
-    border: 1px dashed var(--blanco-transparente);
-    backdrop-filter: var(--glass-blur);
-    -webkit-backdrop-filter: var(--glass-blur);
-}
-
-.family-section {
-    border: 1px dashed #b2ebf2;
-    border-radius: 20px;
-    padding: 20px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    backdrop-filter: var(--glass-blur);
-    -webkit-backdrop-filter: var(--glass-blur);
-}
-
-.divider {
-    border-top: 1px solid #b2ebf2;
-    width: 50%;
-    margin: 5px auto 15px auto;
-}
-
-/* --- 6. Tipografía de Detalles --- */
-.family-title {
-    font-weight: 700;
-    font-size: 1.1rem;
-    text-transform: uppercase;
-}
-
-.name-label {
-    font-size: 0.85rem;
-    font-weight: 700;
-    display: block;
-}
-
-.name-value {
-    font-size: 1rem;
-}
-
-/* --- 7. Estilos para la Nueva Sección de Foto y Frase --- */
-.photo-section {
-    padding: 0px 25px 0px 25px;
-}
-
-/* Contenedor de la foto para crear el efecto de borde brillante (simulando agua/luz) */
-.photo-wrapper {
-    display: inline-block;
-    position: relative;
-    padding: 8px;
+.article-info .section-photo {
     background: rgba(255, 255, 255, 0.15);
     border-radius: 50%;
     box-shadow: 0 0 20px rgba(178, 235, 242, 0.5);
+    display: inline-block;
+    padding: 0.5rem;
+    position: relative;
 }
 
-/* Estilos específicos para la imagen */
-.img-bautizo {
-    filter: brightness(1.05);
-    border: 2px solid #fff;
+/* --- 6. Estilos de la Fecha Modernos --- */
+.section-clock {
+    margin-bottom: 1rem;
 }
 
+<<<<<<< HEAD
 /* --- Estilos para la Fecha --- */
 .fecha-evento {
     color: #fff;
@@ -222,22 +143,339 @@ canvas {
     color: #fff;
     font-family: 'Times New Roman', Times, serif;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+=======
+.fecha-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    font-family: 'Quicksand', sans-serif;
+>>>>>>> modificacion
 }
 
-.frase-bautizo p:first-child {
+.fecha-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.fecha-numero {
+    font-size: 2.5rem;
     font-weight: 700;
-    font-size: 1.1rem;
-    line-height: 1.3;
-    color: #a9ffa9;
+    color: var(--color-dorado);
+    line-height: 1;
+    letter-spacing: 2px;
 }
 
-footer {
-    padding: 0px 25px 0px 25px;
-}
-
-.footer p {
-    font-weight: 400;
+.fecha-texto {
     font-size: 0.9rem;
-    opacity: 0.9;
-    color: #a9ffa9;
+    color: #ffffff;
+    font-weight: 400;
+    letter-spacing: 4px;
+    margin-top: 5px;
+    text-transform: uppercase;
+}
+
+.fecha-separador {
+    height: 50px;
+    width: 2px;
+    background-color: var(--color-lila);
+    opacity: 0.6;
+}
+
+.fecha-numero {
+    text-shadow: 0 0 10px rgba(245, 205, 88, 0.3);
+}
+
+/* --- 7. Estilos Mensaje de los Padres (Mejorado) --- */
+.section-mensaje {
+    text-align: center;
+    padding: 1.3rem;
+    position: relative;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(8px);
+    margin-bottom: 1rem;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+}
+
+.texto-padres {
+    color: #ffffff;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 500;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.firma-padres {
+    color: var(--color-dorado);
+    font-family: 'Pacifico', cursive;
+    font-size: 1.3rem;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+.section-mensaje::after {
+    display: none;
+}
+
+/* --- 8. Sección de Eventos y Ubicaciones (OPTIMIZADO) --- */
+.section-eventos {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.evento-card {
+    -webkit-backdrop-filter: blur(10px);
+    /* Para Safari */
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    color: white;
+    margin-bottom: 1rem;
+    padding: 1.3rem;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.card-header-wrapper {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+}
+
+.icono-principal {
+    color: var(--color-dorado);
+    display: block;
+    filter: drop-shadow(0 0 8px rgba(245, 205, 88, 0.5));
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+.titulo-evento {
+    color: white;
+    font-family: 'Pacifico', cursive;
+    font-size: 1.8rem;
+    line-height: 1.2;
+    margin: 0;
+}
+
+.detalles-evento {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.detalles-lista {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+    font-family: 'Quicksand', sans-serif;
+    width: 90%;
+}
+
+.detalles-lista p {
+    margin: 0;
+    font-size: 1.05rem;
+    display: flex;
+    align-items: center;
+    text-align: left;
+}
+
+.detalles-lista strong {
+    font-weight: 700;
+    color: #e0e0e0;
+    margin-right: 5px;
+    white-space: nowrap;
+}
+
+.detalles-lista span {
+    color: white;
+}
+
+.icono-detalle {
+    color: var(--color-dorado);
+    /* Iconos pequeños en lila */
+    font-size: 1.15rem;
+    margin-right: 12px;
+    width: 25px;
+    text-align: center;
+}
+
+.referencia span {
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.section-padrinos {
+    text-align: center;
+    color: white;
+}
+
+.titulo-padrinos {
+    font-family: 'Pacifico', cursive;
+    color: var(--color-dorado);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 10px rgba(245, 205, 88, 0.4);
+}
+
+.padrino-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 1rem 1rem;
+    max-width: 450px;
+    width: 100%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    margin-bottom: 0 !important;
+}
+
+/* Columna de la Foto */
+.padrino-foto-col {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 1rem;
+}
+
+.padrino-foto-wrapper {
+    flex-shrink: 0;
+    position: relative;
+    padding: 3px;
+    background: rgba(178, 235, 242, 0.3);
+    /* Un brillo sutil de fondo */
+    border-radius: 50%;
+}
+
+.padrino-foto {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border: 3px solid white;
+}
+
+/* Columna de la Información */
+.padrino-info-col {
+    padding-left: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.padrino-rol {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.8);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+    display: block;
+}
+
+.padrino-nombre {
+    font-family: 'Quicksand', sans-serif;
+    color: var(--color-dorado);
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.2;
+    filter: drop-shadow(0 0 5px rgba(245, 205, 88, 0.3));
+}
+
+.footer-info p {
+    font-weight: 600;
+    font-size: 1.2rem;
+    font-style: italic;
+    padding: 0 2rem;
+    color: white;
+}
+
+/* --- 10. Estilos del Overlay de Inicio --- */
+.overlay-inicio {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 31, 63, 0.8);
+    /* Azul profundo translúcido */
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    /* Por encima de todo */
+    transition: opacity 1s ease, visibility 1s;
+}
+
+.icono-musica-wrapper {
+    width: 100px;
+    height: 100px;
+    background: var(--color-dorado);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    box-shadow: 0 0 20px rgba(245, 205, 88, 0.5);
+    transition: transform 0.3s ease;
+    margin: auto;
+}
+
+.icono-musica-wrapper:hover {
+    transform: scale(1.1);
+}
+
+.icono-musica-wrapper i {
+    color: #2c3e50;
+    font-size: 2.5rem;
+    margin-left: 5px;
+}
+
+.txt-abrir {
+    color: white;
+    font-family: 'Quicksand', sans-serif;
+    margin-top: 20px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.pulso-circulo {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 2px solid var(--color-dorado);
+    border-radius: 50%;
+    animation: pulsar 2s infinite;
+}
+
+@keyframes pulsar {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1.8);
+        opacity: 0;
+    }
+}
+
+.overlay-hidden {
+    opacity: 0;
+    visibility: hidden;
 }
