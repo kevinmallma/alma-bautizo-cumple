@@ -4,6 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Invitación: Alma Antonella</title>
+    <meta
+      name="description"
+      content="Acompáñanos a celebrar el Bautizo y el 1er Añito de nuestra querida Alma Antonella. ¡Te esperamos!"
+    />
+
+    <meta property="og:title" content="Invitación: Alma Antonella" />
+    <meta
+      property="og:description"
+      content="Bautizo y 1er Añito - 09 de Mayo de 2026"
+    />
+    <meta property="og:image" content="./img/alma.jpg" />
+    <meta property="og:type" content="website" />
+
+    <link rel="icon" type="image/png" href="./img/vela.png" />
+    <link rel="apple-touch-icon" href="./img/vela.png" />
 
     <link
       href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&family=Pacifico&display=swap"
@@ -20,110 +35,183 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
 
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
     <link href="./styles/app.css" rel="stylesheet" />
   </head>
-  <body>
+  <body class="d-flex justify-content-center">
     <canvas id="ocean"></canvas>
 
-    <main class="container main-container">
-      <div class="invitation-card shadow">
-        <header class="header-image">
-          <img src="./img/vela.png" alt="Icono Vela" width="80" />
-          <h1>Bautizo y 1er Añito</h1>
-          <h2 class="nombre-bebe">ALMA ANTONELLA</h2>
-        </header>
+    <main class="container">
+      <header class="header-image">
+        <img src="./img/vela.png" alt="Icono Vela" width="80" />
+        <h1>Bautizo y 1er Añito</h1>
+        <h2 class="nombre-bebe">ALMA ANTONELLA</h2>
+      </header>
 
-        <section class="photo-section text-center">
-          <div class="photo-wrapper mb-3">
-            <img
-              src="./img/alma.jpeg"
-              alt="Alma Antonella"
-              class="img-fluid rounded-circle img-bautizo"
-              width="130"
-            />
-          </div>
+      <article class="article-info">
+        <section class="section-photo">
+          <img
+            src="./img/alma.jpg"
+            alt="Alma Antonella"
+            class="img-fluid rounded-circle img-bautizo"
+            width="130"
+          />
+        </section>
 
-          <div class="frase-bautizo">
-            <p class="mb-1">
-              "Hoy recibo la bendición del Señor y celebro mi primer añito de
-              vida rodeada de amor."
-            </p>
+        <section class="section-clock">
+          <div class="fecha-container">
+            <div class="fecha-item">
+              <span class="fecha-numero">09</span>
+              <span class="fecha-texto">MAYO</span>
+            </div>
+            <div class="fecha-separador"></div>
+            <div class="fecha-item">
+              <span class="fecha-numero">2026</span>
+              <span class="fecha-texto">SÁBADO</span>
+            </div>
           </div>
         </section>
 
-        <section class="event-details">
-          <div class="row g-3">
-            <div class="col-12">
-              <article class="detail-box">
-                <h6 class="fw-bold text-uppercase">⛪ Parroquia</h6>
-                <p class="mb-0 small">
-                  <i class="fa-solid fa-location-dot"></i> Cristo Rey
-                </p>
-                <p class="mb-0 small">
-                  <i class="fa-solid fa-location-arrow"></i> Pueblo Nuevo -
-                  Chincha
-                </p>
-                <p class="mb-0 small">
-                  <i class="fa-solid fa-clock"></i> 11:00 AM
-                </p>
-              </article>
+        <section class="section-mensaje">
+          <p class="texto-padres mb-0">
+            Hoy damos gracias a Dios por el milagro de tu vida y la bendición de
+            ser tus padres. Celebramos tu primer añito y el inicio de tu camino
+            en la fe. <br />
+            ¡Te amamos, pequeña Alma! <br />
+            💖
+          </p>
+          <p class="firma-padres mb-0">Con amor, Kevin y Ana María</p>
+        </section>
+
+        <section class="section-eventos">
+          <div class="evento-card">
+            <div class="card-header-wrapper">
+              <i class="fas fa-church icono-principal"></i>
+              <h3 class="titulo-evento">Misa de Bautizo</h3>
             </div>
 
-            <div class="col-12">
-              <article class="detail-box">
-                <h6 class="fw-bold text-uppercase">🎂 Recepción</h6>
-                <p class="mb-0 small">
-                  <i class="fa-solid fa-location-dot"></i> Calle Independencia
-                  MZ:8 - LT:11
+            <div class="detalles-evento">
+              <div class="detalles-lista">
+                <p>
+                  <i class="fas fa-clock icono-detalle"></i>
+                  <span>11:00 AM</span>
                 </p>
-                <p class="mb-0 small">
-                  <i class="fa-solid fa-location-arrow"></i> Tupac Amaru B -
-                  Chincha Alta
+                <p>
+                  <i class="fas fa-place-of-worship icono-detalle"></i>
+                  <span>Parroquia Cristo Rey</span>
                 </p>
-                <p class="mb-0 small">
-                  <i class="fa-solid fa-house"></i> Ref: Frente al Polideportivo
+                <p>
+                  <i class="fas fa-map-marker-alt icono-detalle"></i>
+                  <span>Pueblo Nuevo - Chincha</span>
                 </p>
-                <p class="mb-0 small">
-                  <i class="fa-solid fa-clock"></i> 05:00 PM
-                </p>
-              </article>
+              </div>
             </div>
           </div>
 
-          <div class="family-section">
-            <div class="row">
-              <div class="col-12 mb-2">
-                <span class="family-title">Mis Padres</span>
-                <div class="name-value">Kevin & Ana María</div>
+          <div class="evento-card">
+            <div class="card-header-wrapper">
+              <i class="fas fa-glass-cheers icono-principal"></i>
+              <h3 class="titulo-evento">Recepción</h3>
+            </div>
+
+            <div class="detalles-evento">
+              <div class="detalles-lista">
+                <p>
+                  <i class="fas fa-clock icono-detalle"></i>
+                  <span>5:00 PM</span>
+                </p>
+                <p>
+                  <i class="fas fa-home icono-detalle"></i>
+                  <span>Calle Independencia MZ:8 - LT:11</span>
+                </p>
+                <p>
+                  <i class="fas fa-map-marker-alt icono-detalle"></i>
+                  <span>Tupac Amaru Zona B - Chincha Alta</span>
+                </p>
+                <p class="referencia">
+                  <i class="fas fa-info-circle icono-detalle"></i>
+                  <strong>Ref:</strong>
+                  <span>Frente al Polideportivo</span>
+                </p>
               </div>
+            </div>
+          </div>
+        </section>
 
-              <div class="divider"></div>
+        <section class="section-padrinos">
+          <h2 class="titulo-padrinos">Mis Padrinos</h2>
 
-              <div class="col-12">
-                <span class="family-title d-block mb-2">Mis Padrinos</span>
-                <div class="row">
-                  <div class="col-6">
-                    <span class="name-label">Padrino</span>
-                    <div class="name-value">Brayamn Violeta Tovar</div>
-                  </div>
-                  <div class="col-6">
-                    <span class="name-label">Madrina</span>
-                    <div class="name-value">Monica Morón Yataco</div>
-                  </div>
+          <div
+            class="padrinos-wrapper d-flex flex-column align-items-center gap-3"
+          >
+            <article
+              class="padrino-card glass-card row g-0 m-auto align-items-center"
+            >
+              <div class="col-4 padrino-foto-col">
+                <div class="padrino-foto-wrapper">
+                  <img
+                    src="./img/padrino.jpg"
+                    alt="Padrino"
+                    class="img-fluid rounded-circle padrino-foto"
+                  />
                 </div>
               </div>
-            </div>
+              <div class="col-8 padrino-info-col text-start">
+                <div class="padrino-info">
+                  <h3 class="padrino-nombre">Brayamn Violeta Tovar</h3>
+                </div>
+              </div>
+            </article>
+
+            <article
+              class="padrino-card glass-card row g-0 m-auto align-items-center"
+            >
+              <div class="col-4 padrino-foto-col">
+                <div class="padrino-foto-wrapper">
+                  <img
+                    src="./img/madrina.jpg"
+                    alt="Madrina"
+                    class="img-fluid rounded-circle padrino-foto"
+                  />
+                </div>
+              </div>
+              <div class="col-8 padrino-info-col text-start">
+                <div class="padrino-info">
+                  <h3 class="padrino-nombre">Monica Silvia Morón Yataco</h3>
+                </div>
+              </div>
+            </article>
           </div>
         </section>
+      </article>
 
-        <footer class="footer">
-          <p>
-            Acompáñame en este día tan especial, te esperamos...
-          </p>
-        </footer>
-      </div>
+      <article id="overlay-inicio" class="overlay-inicio">
+        <div class="contenido-inicio animate__animated animate__fadeIn">
+          <div class="icono-musica-wrapper" onclick="comenzarInvitacion()">
+            <i class="fas fa-play"></i>
+            <span class="pulso-circulo"></span>
+          </div>
+          <p class="txt-abrir">Toca para abrir la invitación</p>
+        </div>
+      </article>
+
+      <audio id="musica-fondo" loop>
+        <source src="./music/pez.mp3" type="audio/mpeg" />
+        Tu navegador no soporta el elemento de audio.
+      </audio>
+
+      <footer class="footer-info pb-5">
+        <p class="mb-0">
+          Esperamos contar con tu presencia para celebrar juntos
+        </p>
+      </footer>
     </main>
 
     <script src="./scripts/fondo-peces.js"></script>
+    <script src="./scripts/audio.js"></script>
   </body>
 </html>
